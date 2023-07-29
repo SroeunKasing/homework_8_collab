@@ -18,11 +18,12 @@ class CodingRoomsUnitTests(unittest.TestCase):
         self.assertTrue(True)
 
     def test_chunking_by(self):
-
-        self.assertEqual(chunking_by([5, 4, 7, 3, 4, 5, 4], 3),
-                         [[5, 4, 7], [3, 4, 5], [4]])
-
+        self.assertEqual(chunking_by([5, 4, 7, 3, 4, 5, 4], 3), [[5, 4, 7], [3, 4, 5], [4]])
         self.assertEqual(chunking_by([3, 4, 5], 1),  [[3], [4], [5]])
+        self.assertEqual(chunking_by([1, 2, 3], 3),  [[1, 2, 3]])
+        self.assertEqual(chunking_by([1, 2, 76, 32, 4, 234, 124, 1, 1, 1, 4, 5, 5], 5),  [[1, 2, 76, 32, 4], [234, 124, 1, 1, 1], [4, 5, 5]])
+        self.assertEqual(chunking_by([2], 2),  [[2]])
+        self.assertEqual(chunking_by([], 2),  [])
 
 
 if __name__ == '__main__':
